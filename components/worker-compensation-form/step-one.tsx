@@ -1,10 +1,17 @@
+import useRouter from 'next/router';
 import FormWhite from 'components/ui/forms/form-white';
 import InputVertical from 'components/ui/forms/input-vertical';
 
 const StepOne = () => {
+  const router = useRouter;
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    router.push('/step-two');
+  };
   return (
     <section className="max-w-full h-auto sm:h-screen  container w-full sm:w-1/2 mx-auto">
-      <FormWhite>
+      <FormWhite onSubmit={onSubmit}>
         <h3 className="mb-2 font-semibold text-lg">Who is the primary contact for this policy?</h3>
         <p className="text-sm text-gray-700 mb-5">
           This person will receive all communications from Newfront about this policy. You can change this contact
