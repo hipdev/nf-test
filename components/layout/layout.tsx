@@ -23,7 +23,7 @@ const Layout = ({ children, title }) => {
           </Link>
         </div>
       </header>
-      <main className="bg-gray-100 pt-10 sm:pt-12 xl:pt-20 pb-20 sm:pb-0">
+      <main className="bg-gray-200 pt-10 sm:pt-12 xl:pt-20 pb-20 sm:pb-0">
         <div className="container mx-auto">{children}</div>
       </main>
       <footer className="p-3 text-white text-center bg-gray-800 text-sm">
