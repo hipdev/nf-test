@@ -52,7 +52,7 @@ const StepThree = () => {
         />
         <CheckboxInline label="Do you give paid vacation?" name="hasPaidVacation" register={register} />
 
-        {watchPaidVacation && (
+        {(watchPaidVacation || state[formId]?.hasPaidVacation) && (
           <InputVertical
             label="Please provide details about the paid vacation"
             inputType="text"

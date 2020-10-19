@@ -1,0 +1,161 @@
+[
+    {
+      "formId": "12345",
+      "formName": "Worker's compensation application",
+      "formType": "white",
+      "pagesNumber": 4,
+      "redirectOnSubmit":"/",
+      "onFinishSubmitTo":"/api/get-forms",
+      "pages": [
+        {
+          "pageNumber": 1,
+          "title": "Who is the primary contact for this policy?",
+          "subTitle":
+            "This person will receive all communications from Newfront about this policy. You can change this contact information later. If you're not sure, just add your contact information.",
+            "fields": [
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "label": "Full Name",
+              "name": "fullName",
+              "errorMsg": "Please add the full name",
+              "isRequired": true,
+              "design": "vertical"
+            },
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "label": "Role",
+              "name": "role",
+              "design": "vertical"
+            },
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "label": "Phone Number",
+              "name": "phoneNumber",
+              "errorMsg": "Please add the full name",
+              "isRequired": true,
+              "design": "vertical",
+              "valid":"isPhoneNumber()",
+              "errorValidation":"Please add a right phone number like (57) 317 735 8656"
+            }
+          ]
+        },
+        {
+          "pageNumber": 2,
+          "title": "Tell us about your company",
+          "fields": [
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "label": "Company name",
+              "name": "companyName",
+              "errorMsg": "Please add the company name",
+              "isRequired": true,
+              "design": "vertical"
+            },
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "label": "What is your Federal Employer Identification Number? (FEIN)",
+              "name": "fein",
+              "design": "vertical",
+              "errorMsg": "The FEIN is required",
+              "isRequired": true
+            },
+            {
+              "fieldType": "input",
+              "inputType": "number",
+              "label": "Years in business",
+              "name": "yearsInBusiness",
+              "design": "vertical"
+            },
+            {
+              "fieldType": "input",
+              "inputType": "number",
+              "label": "Number of locations",
+              "name": "numberOfLocations",
+              "design": "vertical"
+            },
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "label": "In which states do you operate?",
+             "name": "operationStates",
+              "design": "vertical"
+            }
+          ]
+        },
+        {
+          "pageNumber": 3,
+          "title": "Tell us about your employees",
+          "fields": [
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "label": "What's the name of the clinic, physician, or ER used for work injuries?",
+              "name": "providerName",
+              "design": "vertical"
+            },
+            {
+              "fieldType": "checkbox",
+              "label": "Do you provide group medical insurance?",
+              "name": "hasMedicalInsurance",
+              "design": "vertical"
+            },
+            {
+              "fieldType": "checkbox",
+              "label": "Do you offer a retirement or pension plan?",
+              "name": "hasGroupMedicalInsurance",
+              "design": "vertical"
+            },
+            {
+              "fieldType": "checkbox",
+              "label": "Do you give paid vacation?",
+              "name": "hasPaidVacation",
+              "design": "vertical"
+            },
+            {
+              "fieldType": "input",
+              "inputType": "text",
+              "hidden": true,
+              "watch": "hasPaidVacation",
+              "label": "Please provide details about the paid vacation",
+              "name": "providerName",
+              "design": "vertical",
+              "isRequired": true,
+              "errorMsg": "The details are required"
+            }
+          ]
+        },
+        {
+          "pageNumber": 4,
+          "title": "How do you want to pay for your policy?",
+          "fields": [
+            {
+              "fieldType": "radio",
+              "value": "Yes",
+              "label": "I want to pay Newfront",
+              "subLabel": "You'll pay Newfront instead of paying each insurance company separately. There are no fees",
+              "name": "willPayNewfront",
+              "design": "vertical",
+              "defaultChecked": true,
+              "buttonLabel": "RECOMMENDED",
+              "hasControl": true
+            },
+            {
+              "fieldType": "radio",
+              "value": "No",
+              "label": "I want to pay the insurance company directly",
+              "subLabel": "You'll receive bills from the insurance company and it will be your resonsibility to make sure they are paid to keep your coverage",
+              "name": "willPayNewfront",
+              "design": "vertical",
+              "hasControl": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  
