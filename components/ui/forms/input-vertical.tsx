@@ -1,4 +1,4 @@
-import { ErrorMessage } from '@hookform/error-message';
+import { ErrorMessage } from '@hookform/error-message'; // Great hook to handle custom error messages using RHF
 
 type Props = {
   inputType: string;

@@ -6,9 +6,10 @@ type Props = {
   children: any;
   back?: string;
   onSubmit: any;
+  finish?: boolean;
 };
 
-const FormWhite = ({ children, back, onSubmit }: Props) => {
+const FormWhite = ({ children, back, onSubmit, finish }: Props) => {
   return (
     <form onSubmit={onSubmit} className="bg-white shadow-sm rounded-sm">
       <fieldset className="p-10">{children}</fieldset>
@@ -20,11 +21,11 @@ const FormWhite = ({ children, back, onSubmit }: Props) => {
               <SecondaryButton text="Back" type="button" />
             </a>
           </Link>
-          <PrimaryButton text="Next" type="submit" />
+          <PrimaryButton text={finish ? 'Finish' : 'Next'} type="submit" />
         </div>
       ) : (
         <div className="flex bg-gray-100 py-5 justify-end px-10">
-          <PrimaryButton text="Next" type="submit" />
+          <PrimaryButton text={finish ? 'Finish' : 'Next'} type="submit" />
         </div>
       )}
     </form>
